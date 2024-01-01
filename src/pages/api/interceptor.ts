@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const instance = axios.create({
-    timeout: 60000,
+    timeout: 6000,
 });
 
 export const get = (url: string) => {

@@ -115,7 +115,7 @@ const SideNavBar = ({
                     className="p-[1.5rem] pl-[2rem]"
                 />
             </div>
-            <div className="w-[100%]">
+            <div className="w-[100%] mt-5">
                 <ul className="w-[100%]">
                     {
                         sideNavData.map(item => (

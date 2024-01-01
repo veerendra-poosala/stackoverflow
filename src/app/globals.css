@@ -22,7 +22,7 @@ body{
 }
 
 h2{
-  @apply text-[#bfbfbf] text-[1rem] leading-[150%] uppercase;
+  @apply text-[#bfbfbf] text-[0.875rem] leading-[150%] uppercase;
 }
 
 h3{
