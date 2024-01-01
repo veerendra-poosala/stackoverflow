@@ -104,7 +104,8 @@ const SideNavBar = ({
     }
 
     return(
-        <div className="w-[100%] min-h-[100vh]">
+        open ? (
+        <div className="">
             <div>
                 <Image
                     width="200"
@@ -161,6 +162,9 @@ const SideNavBar = ({
             </div>
 
         </div>
+        ) : (
+            <></>
+        )
     )
 }
 
