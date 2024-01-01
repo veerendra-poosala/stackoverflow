@@ -4,8 +4,11 @@ import { IoSearch } from "react-icons/io5";
 import { SlGlobe } from "react-icons/sl";
 import { HiMiniComputerDesktop } from "react-icons/hi2";
 import { IoChevronDown } from "react-icons/io5";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { onFetchQuestions } from "@/pages/questions/question.slice";
 
 
 const initialFilter = {
@@ -20,7 +23,31 @@ const TopBar = ()=>{
 
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [searchText, setSearchText] = useState('');
-    const [filter, setFilter] = useState();
+    
+    const dispatch = useDispatch();
+    const questionsData = useSelector((state: RootState) => state.question);
+    const {  questionData } = questionsData;  
+    
+
+    useEffect(() => {
+        if (searchText?.trim() === '') {
+          dispatch(onFetchQuestions(questionData));
+          return;
+        }
+      
+        const formattedSearchText = searchText.toLowerCase(); 
+      
+        const filteredQuestions = questionData?.filter(
+          (q: any) =>
+            (q.title?.toLowerCase().includes(formattedSearchText) ||
+              q.body?.toLowerCase().includes(formattedSearchText))
+        );
+      
+        dispatch(onFetchQuestions(filteredQuestions));
+      }, [searchText, questionData, dispatch]);
+      
+
+    
 
     return(
         <>
@@ -38,6 +65,7 @@ const TopBar = ()=>{
                             className="text-[1rem] font-normal leading-[150%] border-none outline-none pl-2 pb-1 self-center text-[#a6a6a6]" 
                             placeholder="search"
                             id="search"
+                            onChange={(e)=>setSearchText(e.target.value)}
                         />
                     </div>
                 </div>

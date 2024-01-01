@@ -118,10 +118,10 @@ const SideNavBar = ({
             <div className="w-[100%] mt-5">
                 <ul className="w-[100%]">
                     {
-                        sideNavData.map(item => (
+                        sideNavData.map((item, index) => (
                             <li 
-                                id={item.title}
-                                className={checkActiveLink(item?.link)? "active-tab" : "" }
+                                key={`${index}`}
+                                className={checkActiveLink(item?.link)? "active-tab cursor-pointer" : "cursor-pointer" }
                                 onClick={()=>{
                                     router.push(`${baseUrl}${item.link}`)
                                 }}
