@@ -1,5 +1,6 @@
 
 import '../../app/globals.css';
+import SideNavBar from './SideNavbar';
 
 
 export default function RootLayout({
@@ -8,9 +9,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <div>
-      {children}
+    <div className='layout-bg-container'>
+      <div className='side-nav-bg-container'>
+        <SideNavBar open={true} />
+      </div>
+      <div>
+        {children}
+      </div>
     </div>
+    
     
   )
 }

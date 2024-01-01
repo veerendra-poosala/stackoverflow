@@ -2,18 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root { 
+  --orange-color: #E7700D;
+  
 }
 
 
 body{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #fff;
+  min-height: 100vh;
+  min-width: 100%;
+  overflow: hidden;
 }
 
-h1{
-  @apply text-red-800;
+*{
+  box-sizing: border-box;
+}
+h2{
+  @apply text-[#bfbfbf] text-[1rem] leading-[150%] ;
+}
+li{
+  @apply list-none cursor-pointer p-2 ;
+}
+
+
+
+.layout-bg-container{
+  max-width: 1080px !important;
+  margin: auto;
+}
+
+.side-nav-bg-container{
+  max-width: 200px !important;
+  border: none;
+  border-right: 1px solid #bfbfbf;
+}
+
+.active-tab{
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function:cubic-bezier(1, 0, 0, 1);
+  transition-property: color,border;
+  border-left: 2px solid var(--orange-color);
 }
 
