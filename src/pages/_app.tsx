@@ -1,12 +1,10 @@
 
 import type { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import Head from 'next/head'
-import Script from 'next/script'
 import { NextPageWithLayout } from './page'
-import Home from '@/pages/index'
-// import Destination from './destinations'
+import { Provider } from 'react-redux'
+import { store } from '@/store/store'
+import RootLayout from '@/components/layout/layout';
+
 
 interface AppPropsWithLayout extends AppProps {
   Component: NextPageWithLayout
@@ -15,7 +13,14 @@ interface AppPropsWithLayout extends AppProps {
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
  
   return (
-    <Home />
+    <>
+      <Provider store={store}>
+        <RootLayout>
+          <Component {...pageProps} />
+        </RootLayout> 
+      </Provider>
+
+    </>
   )
 }
 
