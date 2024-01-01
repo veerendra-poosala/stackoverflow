@@ -1,6 +1,7 @@
 
 import '../../app/globals.css';
 import SideNavBar from './SideNavbar';
+import TopBar from './TopBar';
 
 
 export default function RootLayout({
@@ -9,15 +10,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className='layout-bg-container'>
+    <div className='layout-bg-container flex flex-row'>
       <div className='side-nav-bg-container'>
         <SideNavBar open={true} />
       </div>
-      <div>
-        {children}
+      <div className='main-container flex flex-col'>
+        <div>
+            <TopBar />
+            <div className='flex flex-row'>
+              <div>
+                {children}
+              </div>
+            </div>
+           
+        </div>
       </div>
     </div>
-    
-    
+     
   )
 }

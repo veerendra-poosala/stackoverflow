@@ -4,6 +4,7 @@
 
 :root { 
   --orange-color: #E7700D;
+  --grey-2-color: #a6a6a6;
   
 }
 
@@ -19,9 +20,16 @@ body{
 *{
   box-sizing: border-box;
 }
+
 h2{
-  @apply text-[#bfbfbf] text-[1rem] leading-[150%] ;
+  @apply text-[#bfbfbf] text-[0.875rem] leading-[150%] uppercase;
 }
+
+h3{
+  @apply text-[#a6a6a6] leading-[150%] text-[0.875rem] ;
+}
+
+
 li{
   @apply list-none cursor-pointer p-2 ;
 }
@@ -34,9 +42,15 @@ li{
 }
 
 .side-nav-bg-container{
-  max-width: 200px !important;
+  max-width: 240px !important;
+  min-height: 100vh;
+  height: 100%;
   border: none;
   border-right: 1px solid #bfbfbf;
+}
+
+.main-container{
+  min-width: 840px !important;
 }
 
 .active-tab{

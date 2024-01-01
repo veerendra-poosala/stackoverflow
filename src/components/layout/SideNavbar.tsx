@@ -104,7 +104,8 @@ const SideNavBar = ({
     }
 
     return(
-        <div className="w-[100%] min-h-[100vh]">
+        open ? (
+        <div className="">
             <div>
                 <Image
                     width="200"
@@ -114,7 +115,7 @@ const SideNavBar = ({
                     className="p-[1.5rem] pl-[2rem]"
                 />
             </div>
-            <div className="w-[100%]">
+            <div className="w-[100%] mt-5">
                 <ul className="w-[100%]">
                     {
                         sideNavData.map(item => (
@@ -161,6 +162,9 @@ const SideNavBar = ({
             </div>
 
         </div>
+        ) : (
+            <></>
+        )
     )
 }
 
