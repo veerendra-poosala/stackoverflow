@@ -4,7 +4,7 @@ import { QuestionType} from "./question.interface";
 
 export interface InitialState{
     isLoading : boolean,
-    questionData : QuestionType
+    questionData : QuestionType[]
   }
 
 const initialQuestionState: QuestionType = {
@@ -38,14 +38,14 @@ const initialQuestionState: QuestionType = {
 
   const initialState: InitialState = {
     isLoading : true,
-    questionData : initialQuestionState
+    questionData :[]
   }
 
 const questionSlice = createSlice({
   name: 'question',
   initialState,
   reducers: {
-    onFetchQuestions: (state, action: PayloadAction<QuestionType>) => {
+    onFetchQuestions: (state, action: PayloadAction<QuestionType[]>) => {
         state.questionData = action.payload;
     },
     isLoading: (state) => {
