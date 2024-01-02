@@ -13,6 +13,10 @@ Start the application in GitHub Codespaces. Once the virtual machine is ready ex
 ```
 docker-compose up --build -d
 ```
+## copy .env file to local
+```
+ cp -r .env.example .env.development.local
+```
 
 ## Verify
 
