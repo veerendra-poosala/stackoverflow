@@ -17,8 +17,12 @@ const EachQuestion = ({
 }:QuestionType)=>(
     <li className="list-none">
        <div>
-            <a href={link} className="text-[#1b75d0]">
-                {title}
+            <a href={link} >
+                <p 
+                    className="text-[#1b75d0]"
+                >
+                    {title}
+                </p>
             </a>
 
        </div>
