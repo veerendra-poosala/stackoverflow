@@ -1,8 +1,9 @@
 import { NextPageWithLayout } from './page'
 import '../app/globals.css'
+import Question from './questions'
 
 const Home: NextPageWithLayout = () => {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>
+  return <Question />
 }
 
 export default Home
