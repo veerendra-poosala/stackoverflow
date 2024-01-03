@@ -20,9 +20,35 @@ body {
     'Open Sans',
     'Helvetica Neue',
     sans-serif;
-  background-color: #fff;
-  min-width: 100%;
-  overflow: auto;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family: 'Open Sans';
+    overflow-x: hidden;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    height: -webkit-fill-available;
+    height: fill-available;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  outline-color: transparent;
+  appearance: none;
+}
+button:focus,
+button > .focus {
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
 }
 
 * {
@@ -53,7 +79,7 @@ button {
   align-items: center;
   justify-content: center;
   height: 30px;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .layout-bg-container {

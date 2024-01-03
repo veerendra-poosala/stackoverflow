@@ -56,7 +56,12 @@ const Question: NextPageWithLayout = () => {
       <div className="w-full">
         <ul>
           {questionData?.map((item: QuestionType) => (
-            <EachQuestion key={item?.question_id} title={item?.title} />
+            <EachQuestion 
+              link={item?.link} 
+              key={item?.question_id} 
+              title={item?.title}
+            
+              />
           ))}
         </ul>
       </div>

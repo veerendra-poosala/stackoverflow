@@ -31,7 +31,7 @@ export const sideNavData: SideNavType[] = [
     icon: <FaQuestion size={16} />,
     activeIcon: <FaQuestion size={16} color="var(--orange-color)" />,
     title: 'Questions',
-    link: '/questions',
+    link: "/questions",
     isNewOption: false,
   },
   {

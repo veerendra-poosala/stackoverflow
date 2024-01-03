@@ -12,11 +12,11 @@ export default function RootLayout({
       <div className="side-nav-bg-container fixed">
         <SideNavBar open={true} />
       </div>
-      <div className="main-container relative left-[220px] flex flex-col shadow-lg w-[82%] -z-40">
-        <div className='relative'>
+      <div className="main-container relative left-[220px] flex flex-col shadow-lg w-[82%]">
+        <div>
           <TopBar />
           <div className="relative top-14 flex flex-row">
-            <div className=''>{children}</div>
+            <div className='z-[1]'>{children}</div>
           </div>
         </div>
       </div>
