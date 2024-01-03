@@ -13,15 +13,16 @@ const EachQuestion = ({
   up_vote_count,
   down_vote_count,
   score,
-}: QuestionType) => (
+}: QuestionType) =>{ 
+  return(
   <li className="list-none flex flex-row w-[100%]">
     <div className='w-[100%] md:w-[50%] p-2 border border-solid border-red'>
-      <a href={link} className='cursor-pointer'>
+      <a href={link} target='_blank'>
         <p className="text-[#1b75d0] break-words">{title}</p>
       </a>
     </div>
     <div></div>
   </li>
 )
-
+  }
 export default EachQuestion
