@@ -96,7 +96,7 @@ const SideNavBar = ({ open, changeBarStatus, width }: SideNavBarProps) => {
   }
 
   return open ? (
-    <div className="">
+    <div className="bg-white">
       <div>
         <Image
           width="200"

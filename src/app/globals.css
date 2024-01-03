@@ -21,9 +21,8 @@ body {
     'Helvetica Neue',
     sans-serif;
   background-color: #fff;
-  min-height: 100vh;
   min-width: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 * {
@@ -58,20 +57,18 @@ button {
 }
 
 .layout-bg-container {
-  max-width: 1080px !important;
+ max-width: 1200px !important; 
   margin: auto;
+  overflow: hidden;
 }
 
 .side-nav-bg-container {
   max-width: 240px !important;
-  min-height: 100vh;
-  height: 100%;
   border: none;
-  border-right: 1px solid #bfbfbf;
 }
 
 .main-container {
-  min-width: 840px !important;
+  border-left: 1px solid #bfbfbf;
 }
 
 .active-tab {

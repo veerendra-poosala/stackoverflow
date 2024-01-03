@@ -44,7 +44,7 @@ const TopBar = () => {
 
   return (
     <>
-      <div className="flex flex-row justify-between shadow-sm rounded-sm items-center w-[100%] p-[1rem] py-[2rem]">
+      <div className="fixed flex flex-row justify-between bg-[#ffffff] z-10 shadow-sm rounded-sm items-center w-[100%] p-[1rem] py-[2rem] md:pr-[20rem] mb-10">
         <div className="flex flex-row justify-between items-center">
           <div className="flex flex-col mr-[4rem] cursor-pointer">
             <IoIosMenu className="text-[#a6a6a6]" size={24} />
