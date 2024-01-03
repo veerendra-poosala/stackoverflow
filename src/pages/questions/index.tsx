@@ -1,14 +1,14 @@
 import { RootState, store } from '@/store/store'
 import { NextPageWithLayout } from '../page'
-import { listQuestions } from './question.api'
+import { listQuestions } from '../../components/question/question.api'
 import { useEffect } from 'react'
 import QuestionSortOptions from '@/components/question/QuestionSortOptions'
 import { useSelector, useDispatch } from 'react-redux'
 import { initialFilter } from '@/components/question/QuestionSortOptions'
 import { useState } from 'react'
 import EachQuestion from '@/components/question/EachQuestion'
-import { QuestionType } from './question.interface'
-import { onFetchQuestions } from './question.slice'
+import { QuestionType } from '../../components/question/question.interface'
+import { onFetchQuestions } from '../../components/question/question.slice'
 
 const Question: NextPageWithLayout = () => {
   const dispatch = useDispatch()
@@ -30,7 +30,9 @@ const Question: NextPageWithLayout = () => {
       const newQuestionsData = await listQuestions(
         queryStringFun(initialFilter),
       )
-      dispatch(onFetchQuestions(newQuestionsData))
+      if (newQuestionsData) {
+        dispatch(onFetchQuestions(newQuestionsData))
+      }
     }
 
     if (isLoading) {

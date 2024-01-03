@@ -101,7 +101,7 @@ const SideNavBar = ({ open, changeBarStatus, width }: SideNavBarProps) => {
         <Image
           width="200"
           height="140"
-          src={logo}
+          src='/stack-overflow-logo-png-transparent.png'
           alt="Pin Icon"
           className="p-[1.5rem] pl-[2rem]"
         />

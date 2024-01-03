@@ -1,4 +1,4 @@
-import { QuestionType } from '@/pages/questions/question.interface'
+import { QuestionType } from './question.interface'
 
 const EachQuestion = ({
   title,
