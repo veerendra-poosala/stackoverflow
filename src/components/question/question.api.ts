@@ -1,4 +1,4 @@
-import { get } from '../api/interceptor'
+import { get } from '../../pages/api/interceptor'
 import { store } from '@/store/store'
 import { onFetchQuestions, isLoading } from './question.slice'
 import { questionsData } from '@/components/question/data'
@@ -9,7 +9,7 @@ const host = `${process.env.NEXT_PUBLIC_STACK_API}`
 export const listQuestions = async (query?: string) => {
   try {
     // const res: any = await get(`${host}?${query}`)
-    const res = questionsData;
+    const res = questionsData
     dispatch(onFetchQuestions(res.items))
     return res.items
   } catch (error) {

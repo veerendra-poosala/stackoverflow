@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@/store/store'
-import { onFetchQuestions } from '@/pages/questions/question.slice'
+import { onFetchQuestions } from '../question/question.slice'
 
 const initialFilter = {
   order: 'desc',

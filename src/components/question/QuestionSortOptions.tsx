@@ -1,5 +1,5 @@
-import { listQuestions } from '@/pages/questions/question.api'
-import { onFetchQuestions } from '@/pages/questions/question.slice'
+import { listQuestions } from './question.api'
+import { onFetchQuestions } from './question.slice'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@/store/store'
@@ -68,7 +68,9 @@ const QuestionSortOptions = () => {
       const newQuestionsData = await listQuestions(
         queryStringFun(initialFilter),
       )
-      dispatch(onFetchQuestions(newQuestionsData))
+      if (newQuestionsData) {
+        dispatch(onFetchQuestions(newQuestionsData))
+      }
     }
 
     if (isLoading) {
@@ -110,8 +112,14 @@ const QuestionSortOptions = () => {
                 className={activeSortOption === item.title ? 'text-white' : ''}
               >
                 {item.title}
-
-                <span className={item?.records > 0 ? 'visible' : 'hidden'}>
+                {/* eslint-disable-next-line react/no-danger */}
+                <span
+                  className={
+                    item && item.records && item?.records > 0
+                      ? 'visible'
+                      : 'hidden'
+                  }
+                >
                   {item?.records}
                 </span>
               </p>
