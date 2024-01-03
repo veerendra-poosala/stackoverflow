@@ -14,10 +14,10 @@ const EachQuestion = ({
   down_vote_count,
   score,
 }: QuestionType) => (
-  <li className="list-none">
-    <div>
-      <a href={link}>
-        <p className="text-[#1b75d0]">{title}</p>
+  <li className="list-none flex flex-row w-[100%]">
+    <div className='w-[100%] md:w-[50%] p-2 border border-solid border-red'>
+      <a href={link} className='cursor-pointer'>
+        <p className="text-[#1b75d0] break-words">{title}</p>
       </a>
     </div>
     <div></div>
