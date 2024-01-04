@@ -1,7 +1,7 @@
 import { RootState, store } from '@/store/store'
 import { NextPageWithLayout } from '../page'
 import { listQuestions } from '../../components/question/question.api'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import QuestionSortOptions from '@/components/question/QuestionSortOptions'
 import { useSelector, useDispatch } from 'react-redux'
 import { initialFilter } from '@/components/question/QuestionSortOptions'
@@ -10,11 +10,13 @@ import EachQuestion from '@/components/question/EachQuestion'
 import { QuestionType } from '../../components/question/question.interface'
 import { onFetchQuestions } from '../../components/question/question.slice'
 
+
 const Question: NextPageWithLayout = () => {
   const dispatch = useDispatch()
   const questionsData = useSelector((state: RootState) => state.question)
   const { isLoading, questionData } = questionsData
 
+  
   const queryStringFun = (newFilterValue: any) => {
     let queryString = ''
     Object.keys(newFilterValue).map((v) =>
@@ -56,12 +58,30 @@ const Question: NextPageWithLayout = () => {
       <div className="w-full">
         <ul>
           {questionData?.map((item: QuestionType) => (
-            <EachQuestion 
-              link={item?.link} 
-              key={item?.question_id} 
-              title={item?.title}
-            
-              />
+            <React.Fragment key={`${item?.title}-${Date.now().toLocaleString()}`}>
+              <EachQuestion 
+                tags = {item?.tags}
+                owner = {item?.owner}
+                is_answered = {item?.is_answered}
+                view_count = {item?.view_count}
+                favorite_count = {item?.favorite_count}
+                down_vote_count = {item?.down_vote_count}
+                up_vote_count = {item?.up_vote_count}
+                answer_count = {item?.answer_count}
+                score = {item?.answer_count}
+                last_activity_date = {item?.last_activity_date}
+                creation_date = {item?.creation_date}
+                last_edit_date = {item?.last_edit_date}
+                question_id = {item?.question_id}
+                link = {item?.link}
+                title = {item?.title}
+                body = {item?.body}
+                content_license = {item?.content_license}
+                accepted_answer_id = {item?.accepted_answer_id}
+                closed_date = {item?.closed_date}
+                closed_reason = {item?.closed_reason}
+                />
+              </React.Fragment>
           ))}
         </ul>
       </div>
